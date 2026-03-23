@@ -19,7 +19,10 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User loginData) {
-        // Precise string matching for God Mode
+        if (loginData == null || loginData.getEmail() == null || loginData.getPassword() == null) {
+            return ResponseEntity.status(400).body("Missing credentials");
+        }
+
         String adminEmail = "bollineni.mahesh2006@gmail.com";
         String adminPass = "Mahesh@123";
 
