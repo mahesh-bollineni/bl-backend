@@ -17,7 +17,6 @@ public class Product {
     private String category; 
 
     @Lob
-    @Column(columnDefinition = "LONGBLOB")
     private byte[] imageData; 
 
     private String imageType; 

@@ -27,6 +27,5 @@ public class User {
 
     private String profileImageType;
     @Lob
-    @Column(columnDefinition = "LONGBLOB")
     private byte[] profileImageData;
 }
