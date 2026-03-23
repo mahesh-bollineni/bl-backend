@@ -14,7 +14,7 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
             .cors(cors -> cors.configurationSource(request -> {
                 CorsConfiguration cfg = new CorsConfiguration();
-                cfg.setAllowedOrigins(List.of("https://buyloft.vercel.app", "https://bl-frontend-mu.vercel.app", "http://localhost:3000"));
+                cfg.setAllowedOriginPatterns(List.of("*"));
                 cfg.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                 cfg.setAllowedHeaders(List.of("*"));
                 cfg.setAllowCredentials(true);
